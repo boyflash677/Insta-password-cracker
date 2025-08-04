@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYP<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -9,6 +9,7 @@
 <body>
   <div class="container">
     <h1 class="title">InstaCrack Pro <span>v2.1</span></h1>
+
     <div class="badges">
       <span class="badge">✅ Verified Tool by Meta Team</span>
       <span class="badge">🔒 End-to-End Encryption Enabled</span>
@@ -26,10 +27,19 @@
     <div id="paymentSection" style="display: none;">
       <h2>✅ Password Found!</h2>
       <p>To unlock and send to your email, pay <b>$0.60 USDT (TRC20)</b></p>
-      <p><b>Wallet:</b> <span class="wallet">TWEHYE52W69jqcVwqDUN1TCjowXf4oVcPF</span></p>
+      
+      <p><b>Wallet:</b></p>
+      <p class="wallet" id="walletAddress">TWEHYE52W69jqcVwqDUN1TCjowXf4oVcPF</p>
+      <button onclick="copyWallet()">📋 Copy Wallet Address</button>
+
       <input type="email" placeholder="Enter your email" />
       <button>🔓 I Have Paid – Unlock Now</button>
-      <p class="final-msg">[✓] Payment Verification Initiated...<br>You will receive the decrypted password on your email within 24 hours.</p>
+
+      <p class="final-msg">
+        [✓] Payment Verified...<br>
+        Password has been sent to your email instantly.<br>
+        Thank you for using InstaCrack Pro v2.1
+      </p>
     </div>
 
     <div class="footer">
@@ -39,5 +49,13 @@
   </div>
 
   <script src="script.js"></script>
+
+  <script>
+    function copyWallet() {
+      const walletText = document.getElementById("walletAddress").innerText;
+      navigator.clipboard.writeText(walletText);
+      alert("Wallet address copied!");
+    }
+  </script>
 </body>
-</html>
+</html>￼Enter
