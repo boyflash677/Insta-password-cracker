@@ -49,6 +49,7 @@ input[type="email"] {
   border: 1px solid #00ff99;
   background: black;
   color: #00ff99;
+  border-radius: 5px;
 }
 
 button {
@@ -59,6 +60,7 @@ button {
   cursor: pointer;
   font-weight: bold;
   border-radius: 5px;
+  margin-top: 10px;
 }
 
 #terminal {
@@ -74,17 +76,24 @@ button {
 }
 
 .wallet {
-  color: #ffffff;
+  color: #00ffcc;
   font-weight: bold;
-  background: #003322;
-  padding: 5px;
-  border-radius: 4px;
+  background: #002d22;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 1.1em;
+  display: inline-block;
+  margin-top: 10px;
 }
 
 .final-msg {
-  margin-top: 10px;
+  margin-top: 15px;
   color: #00ff99;
-  font-size: 0.95em;
+  font-size: 1em;
+  background: #001d14;
+  padding: 10px;
+  border-radius: 5px;
+  line-height: 1.6;
 }
 
 .footer {
