@@ -1,10 +1,24 @@
-<!DOCTYP<!DOCTYPE html>
+<!<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>InstaCrack Pro v2.1</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .copy-btn {
+      margin-top: 8px;
+      background: #222;
+      color: #fff;
+      padding: 8px 12px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .copy-btn:active {
+      transform: scale(0.98);
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -28,18 +42,12 @@
       <h2>✅ Password Found!</h2>
       <p>To unlock and send to your email, pay <b>$0.60 USDT (TRC20)</b></p>
       
-      <p><b>Wallet:</b></p>
-      <p class="wallet" id="walletAddress">TWEHYE52W69jqcVwqDUN1TCjowXf4oVcPF</p>
-      <button onclick="copyWallet()">📋 Copy Wallet Address</button>
+      <button class="copy-btn" onclick="copyWallet()">📋 Copy Wallet Address</button>
+      
+      <input type="email" id="emailInput" placeholder="Enter your email" />
+      <button onclick="unlock()">🔓 I Have Paid – Unlock Now</button>
 
-      <input type="email" placeholder="Enter your email" />
-      <button>🔓 I Have Paid – Unlock Now</button>
-
-      <p class="final-msg">
-        [✓] Payment Verified...<br>
-        Password has been sent to your email instantly.<br>
-        Thank you for using InstaCrack Pro v2.1
-      </p>
+      <p class="final-msg" id="finalMsg" style="display:none;">[✓] Payment Verified.<br><b>Please check your mail for the decrypted password.</b></p>
     </div>
 
     <div class="footer">
@@ -48,13 +56,28 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
-
   <script>
+    const walletAddress = "TWEHYE52W69jqcVwqDUN1TCjowXf4oVcPF";
+
+    document.getElementById("startBtn").addEventListener("click", () => {
+      const terminal = document.getElementById("terminal");
+      terminal.textContent = "Searching for password...\nCracking in progress...\nPassword found!\n";
+      document.getElementById("paymentSection").style.display = "block";
+    });
+
     function copyWallet() {
-      const walletText = document.getElementById("walletAddress").innerText;
-      navigator.clipboard.writeText(walletText);
-      alert("Wallet address copied!");
+      navigator.clipboard.writeText(walletAddress).then(() => {
+        alert("Wallet Address Copied");
+      });
+    }
+
+    function unlock() {
+      const email = document.getElementById("emailInput").value;
+      if (email === "") {
+        alert("Please enter your email.");
+        return;
+      }
+      document.getElementById("finalMsg").style.display = "block";
     }
   </script>
 </body>
